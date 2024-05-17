@@ -1,13 +1,15 @@
 #pragma once
 
 #include <raylib.h>
-#include <imgui.h>
+//#include <imgui.h>
 #include "EntityManager.h"
 #include "Entity.h"
 #include "Components.h"
 
 class Game
 {
+private:
+
 public:
     EntityManager m_entities;
     std::shared_ptr <Entity> m_player;
@@ -25,4 +27,7 @@ public:
     void sRender();
     void sEnemySpawner();
     void sCollision();
+
+    // utility
+    void uResetMovementFlags();
 };

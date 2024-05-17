@@ -1,6 +1,6 @@
 #pragma once
 
-#include "raylib.h"
+#include <raylib.h>
 
 class CTransform
 {
@@ -24,16 +24,28 @@ class CShape
 public:
     Rectangle m_rectangle;
 
-    CShape(const Vector2& position, const Vector2& scale)
-        : m_rectangle({ position.x, position.y, scale.x, scale.y })
+    // Default constructor
+    CShape()
+        : m_rectangle({ 0, 0, 100.0f, 100.0f })
     {}
 
-    // standard constructor
-    CShape()
-        : m_rectangle({ 0.0f, 0.0f, 100.0f, 100.0f })
+    // Initialize with size
+    CShape(const Vector2& size)
+        : m_rectangle({ 0, 0, size.x, size.y }) 
     {}
+
 };
 
+//class CSprite
+//{
+//    public:
+//	Texture2D m_texture;
+//	Rectangle m_sourceRec;
+//	Vector2 m_origin;
+//	Color m_color;
+//
+//
+//};
 class CBoundingBox
 {
 public:

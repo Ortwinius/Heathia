@@ -43,9 +43,14 @@ void EntityManager::RenderEntities()
 {
 	for (auto& e : m_entities)
 	{
-		if (e->cShape)
-		{
-			DrawRectangle(e->cShape->m_rectangle.x, e->cShape->m_rectangle.y, e->cShape->m_rectangle.width, e->cShape->m_rectangle.height, WHITE);
+		if (e->cShape && e->cTransform) {
+			DrawRectangle(
+				e->cTransform->m_position.x,
+				e->cTransform->m_position.y,
+				e->cShape->m_rectangle.width,
+				e->cShape->m_rectangle.height,
+				WHITE
+			);
 		}
 	}
 }
